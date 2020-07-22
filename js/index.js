@@ -1,12 +1,7 @@
 let addListPopup, listMenuPopup, clickedListId;
 let lists = [];
 
-window.onload = () => {
-    addListPopup = document.getElementById("add-list-popup");
-    listMenuPopup = document.getElementById("list-menu-popup");
-    fetchData();
-    limitWrapperHeight();
-}
+
 
 
 /* ------------------fetching data -------------------------------------*/
@@ -30,6 +25,13 @@ function fetchData() {
 const addAnotherListBtn = ` <button class="btn btn-lg add-list text-left " id="add-list-btn" onclick="addNewList(event)">
                               <i class="fa fa-plus"></i> &nbsp;&nbsp;&nbsp;Add another list
                             </button> &nbsp;&nbsp;&nbsp;`;
+
+window.onload = () => {
+    addListPopup = document.getElementById("add-list-popup");
+    listMenuPopup = document.getElementById("list-menu-popup");
+    fetchData();
+    limitWrapperHeight();
+}
 /* ------------Display lists and cards ----------------------*/
 
 const getList = (list) => {
@@ -194,9 +196,6 @@ function cardClicked(e) {
         document.getElementById("modal-description").innerHTML = card.description;
     else
         document.getElementById("modal-description").innerHTML = 'No description';
-
-    // const chkliStr = card.checklists.map(li => getChkliItem(li)).join("");
-    // document.getElementById("chkli-wrapper").innerHTML = chkliStr || '<p style="opacity: 0.7">No Checklist</p>';
 }
 
 
